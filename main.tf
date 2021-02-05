@@ -1,9 +1,23 @@
 # Configure the Microsoft Azure Provider
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
+    }
+  }
+}
+
 provider "azurerm" {
     # The "feature" block is required for AzureRM provider 2.x. 
     # If you're using version 1.x, the "features" block is not allowed.
-    version = "~>2.0"
+    
     features {}
+      subscription_id = "bb9d95c2-975a-4c35-976f-7924b6b6d224"
+      client_id       = "e9f37c03-e1d9-42e4-b0cb-917c5c9d7321"
+      client_secret   = "nI.QFIL6_CCj.MaA5s2H3ZSW6W~qi~VQC3"
+      tenant_id       = "4b75aa9d-e95c-43c1-baa2-af9414c1ae2d"
+
 }
 
 # Create a resource group 
